@@ -15,13 +15,15 @@
 <!--Javascript-->
 <script src="/jquery/jquery.min.js"></script>
 <script src="/jquery-ui/jquery-ui.min.js"></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 <body>
     <!--put here-->
-    <h1>Hello, Hoola</h1>
+        <h1>Hello, Hoola</h1>
     <!---->
+    </div>
+    
 
 
     <div id="tabs">
@@ -56,19 +58,22 @@
                 <img class="rounded-t-lg" src="/images/profile.jpg" alt=""/>
               </a>
               <div class="p-6">
-                <h5 class="text-gray-900 text-xl font-medium mb-2">I'm pancake</h5>
-                <p class="text-gray-700 text-base mb-4">
-                  Zzz.Zzz 
+                <h5 class="text-gray-900 text-xl font-medium mb-2">Information</h5>
+                <!--<p class="text-gray-700 text-base mb-4">
+                  Zzz.Zzz
                 </p>
-                <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
+                <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>-->
+              </p>
+                <div id="fname">&nbsp;</div>     <!-- ต้องเพิ่มค่าตามที่โจทย์กำหนดให้แสดงด้วยยยย -->
+                <div id="Sid">&nbsp;</div>
+                <div id="gpaa">&nbsp;</div>
+                <div id="pos">&nbsp;</div>
               </div>
             </div>
           </div>
         
         </div>
     </div><!-- tabs-->
-</body>
-</html>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -87,7 +92,6 @@
                }
            }
        });
-
        //btnRequest
        $('#btnRequest').click( function(){
          // url from where we want to get the data
@@ -98,7 +102,7 @@
            headers: { 
              'Content-Type': 'application/json',
              "Accepts": "application/json",
-             "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90b29scy5lY3BlLm51LmFjLnRoXC9uZXR3b3JrXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjU5MDc5NjI1LCJleHAiOjE2NTkwODMyMjUsIm5iZiI6MTY1OTA3OTYyNSwianRpIjoiTWRmNE1SWldaNVlSb29MOCIsInN1YiI6NjcsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.rV5UsMBWShp-qI5fQGP8xOOhpZQ3GEN8-xsaSVVPiMg",
+             "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90b29scy5lY3BlLm51LmFjLnRoXC9uZXR3b3JrXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjYxNjc4Njc4LCJleHAiOjE2NjE2ODIyNzgsIm5iZiI6MTY2MTY3ODY3OCwianRpIjoiU2VhRUpTY2VSVDRTenhWNCIsInN1YiI6NjcsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.CGYqmJfU8y4vLOIUq697YwqxBvUg-8OyWIzenmdrprE",
            },
            success: function(data){
              console.log(data);
@@ -167,14 +171,14 @@
       trHead.appendChild(col3);
       col3.appendChild(document.createTextNode("ชื่อ-นามสกุล"));
     
-      var col4 = document.createElement('TD');
+      /*var col4 = document.createElement('TD');
       trHead.appendChild(col4);
       col4.appendChild(document.createTextNode("gpa"));
     
       var col5 = document.createElement('TD');
       //col5.width = '50px';
       trHead.appendChild(col5);
-      col5.appendChild(document.createTextNode("อาชีพในอนาคต"));
+      col5.appendChild(document.createTextNode("อาชีพในอนาคต"));*/
   
       var col6 = document.createElement('TD');
       trHead.appendChild(col6);
@@ -220,14 +224,14 @@
           cell2.appendChild(document.createTextNode(items[i].student_id));
           tr.appendChild(cell2);
           //tr.appendChild(td);
-          
+  
         }else if(j==2){
           //number_bill
           var cell3 = document.createElement('TD');
           cell3.appendChild(document.createTextNode(items[i].fullname));
           tr.appendChild(cell3);
           //tr.appendChild(td);
-        }else if(j==3){
+        }/*else if(j==3){
           //work_Code
           var cell4 = document.createElement('TD');
           cell4.appendChild(document.createTextNode(items[i].gpa));
@@ -238,8 +242,8 @@
           var cell5 = document.createElement('TD');
           cell5.appendChild(document.createTextNode(items[i].position));
           tr.appendChild(cell5);
-          //tr.appendChild(td);
-        }else if(j==5){
+          //tr.appendChild(td); 
+        }*/else if(j==5){
           //department
           //btn
           var cell5 = document.createElement('TD');
@@ -255,8 +259,14 @@
          // elementButtonSave.setAttribute("style","width:50px;");
           //elementButtonSave.setAttribute("class","tealA400");
           
-         
-          elementButtonSave.setAttribute("onclick","popupConfirm('"+items[i].fullname+"',this)");
+        /*var userPreference;
+        if (confirm("Do you want to save changes?") == true) {
+          userPreference = "Data saved successfully!";
+        } else {
+          userPreference = "Save Cancelled!";
+        }*/
+
+          elementButtonSave.setAttribute("onclick","confirmAlert('"+items[i].student_id+"',this)");
           
   
           cell5.appendChild(elementButtonSave);
@@ -270,7 +280,62 @@
       myTableDiv.appendChild(table);
     }
   
-    function popupConfirm(fullname,objElement){
-      alert(fullname);
+    function confirmAlert(id){
+      //console.log(id)
+
+      swal({
+        title: "Are you sure?",
+        text: "Click comfirm to view more information",
+        icon: "info",
+        buttons: true,
+        dangerMode: true,
+        })
+      .then((willDelete) => {
+        if (willDelete) {
+          $("#tabs").tabs("option","active",2);
+          swal("You pressed OK!", {
+            icon: "success",
+          });
+        }else{
+          swal({
+            title: "You pressed Cancel!",
+            width: 800,
+          })
+          .then(function() {
+            window.location = "http://localhost:3000/";
+          });
+        }
+      })
+      
+          $.ajax({
+            method: "GET",
+            url: "https://tools.ecpe.nu.ac.th/network/api/student/"+id,
+            dataType : 'json',
+            headers: { 
+              'Content-Type': 'application/json',
+              "Accepts": "application/json",
+              "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90b29scy5lY3BlLm51LmFjLnRoXC9uZXR3b3JrXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjYxNjc4Njc4LCJleHAiOjE2NjE2ODIyNzgsIm5iZiI6MTY2MTY3ODY3OCwianRpIjoiU2VhRUpTY2VSVDRTenhWNCIsInN1YiI6NjcsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.CGYqmJfU8y4vLOIUq697YwqxBvUg-8OyWIzenmdrprE",
+            },
+           success: function(data){
+             console.log(data);
+             $("#tabs").tabs("option","active",2);
+              $("#fname").text(data[0].fullname);
+              $("#Sid").text(data[0].student_id);
+              $("#gpaa").text(data[0].gpa);
+              $("#pos").text(data[0].position);
+             //var tbName ="myDynamicTable";
+             //addTable(data,tbName);
+
+             //alert("Done");
+           }
+         });
     }
+
+
+    /*function popupConfirm(fullname,objElement){
+      alert(fullname);
+    }*/
   </script>
+
+</body>
+</html>
